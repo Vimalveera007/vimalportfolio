@@ -1,38 +1,145 @@
-<ng-container *ngIf="categories.length > 0 ; else noData" class="my-3">
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th class="bg-info">Name</th>
-                <th class="bg-info">Item</th>
-                <th class="bg-info">Quantity</th>
-                <th class="bg-info">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let category of categories">
-                <td>{{category.name}}</td>
-                <td>{{category.items}}</td>
-                <td>{{category.quantity}}</td>
-                <td>{{category.price}}</td>
-            </tr>
-        </tbody>
-    </table>
-</ng-container>
+<nav style="display: flex; gap: 80px; background-color: #5192d7; padding: 20px;">
+    <a href="" routerLink="/home" style="color: white; text-decoration: none; font-weight: bold;">Home</a>
+    <a href="" routerLink="/about" style="color: white; text-decoration: none; font-weight: bold;">About</a>
+    <a href="" routerLink="/services" style="color: white; text-decoration: none; font-weight: bold;">Services</a>
+    <a href="" routerLink="/contact" style="color: white; text-decoration: none; font-weight: bold;">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col-md-6">
+            <img src="../../assets/img.svg" alt="" height="500">
+        </div>
+        <div class="col-md-6 d-flex justify-content-center flex-column">
+            <h1 class="my-3" style="font-size:60px; text-transform: uppercase;">CRM Management</h1>
+            <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo non quae et omnis beatae
+                perferendis
+                dolorem culpa ea natus rem.</p>
+            <div >
+                <button class="btn btn-primary">Read More</button>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
-<ng-template #noData>
-    <p>No products available.</p>
-</ng-template>
+
+<div class="container my-5">
+    <h3>Client Details</h3>
+    <ng-container>
+        <table class="table table-bordered table-hover my-3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                    <th>
+                        Company
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>
+                        {{user.name}}
+                    </td>
+                    <td>
+                        {{user.email}}
+                    </td>
+                    <td>
+                        {{user.phone}}
+                    </td>
+                    <td>{{ user.website }}</td>
+                    <td>
+                        {{user.company.name}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../assets/fatigued-developer-working-overnight-home-rubbing-eyes-while-taking-break.jpg" alt=""
+                style="height: 300px; width: 100%;object-fit: cover;border-radius: 30px;">
+            <img src="../../assets/freelance-coder-typing-javascript-code-computer-develop-online-cloud-computing-information-software-developer-writing-html-script-data-algorithm-working-it-programming-office.jpg"
+                alt="" style="height: 300px; width: 100%;object-fit: cover;;border-radius: 30px;" class="my-3">
+        </div>
+        <div class="col-md-6">
+            <h3 class="my-3">Leads & Opportunities</h3>
+            <p class="my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatum aliquid
+                alias deleniti modi? Quo suscipit veniam reiciendis eius corporis tenetur, atque assumenda expedita,
+                dolorem dicta unde culpa in qui?</p>
+            <p class="my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatum aliquid
+                alias deleniti modi? Quo suscipit veniam reiciendis eius corporis tenetur, atque assumenda expedita,
+                dolorem dicta unde culpa in qui?</p>
+            <mat-accordion>
+                <mat-expansion-panel hideToggle class="my-4">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class=" fs-4">Heading</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem odit consequuntur
+                        dignissimos, iusto sunt soluta cum aspernatur deleniti assumenda voluptas!</p>
+                </mat-expansion-panel>
+            </mat-accordion>
 
 
-<ng-container *ngFor="let user of users">
+            <mat-accordion>
+                <mat-expansion-panel hideToggle class="my-4">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class=" fs-4">Heading</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem odit consequuntur
+                        dignissimos, iusto sunt soluta cum aspernatur deleniti assumenda voluptas!</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+             <mat-accordion>
+                <mat-expansion-panel hideToggle class="my-4">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class=" fs-4">Heading</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem odit consequuntur
+                        dignissimos, iusto sunt soluta cum aspernatur deleniti assumenda voluptas!</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+             <mat-accordion>
+                <mat-expansion-panel hideToggle class="my-4">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class=" fs-4">Heading</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem odit consequuntur
+                        dignissimos, iusto sunt soluta cum aspernatur deleniti assumenda voluptas!</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ng-container *ngFor="let user of user">
     <ng-container *ngIf="user.active">
         <p>{{ user.name }} is active</p>
     </ng-container>
-</ng-container>
+</ng-container> -->
 
 
-<ng-container *ngIf="toggle; else toggle1">
+<!-- <ng-container *ngIf="toggle; else toggle1">
     <p>Toggle is ON</p>
 </ng-container>
 
@@ -42,30 +149,4 @@
 
 <button (click)="OnToggle()" class="btn btn-danger">
     Toggle
-</button>
-
-
-<div>
-    <form action="" class="px-5" (ngSubmit)="onLogin()">
-        <div class="form-group">
-            <label for="">Username</label>
-            <input type="text" name="Username" id="" class="form-control" [(ngModel)]="username" required>
-        </div>
-        <div class="form-group mt-3">
-            <label for="">Password</label>
-            <input type="text" name="Password" id="" class="form-control" [(ngModel)]="password" required>
-        </div>
-        <button class="btn btn-primary float-end mt-3">Submit</button>
-
-        <ng-container *ngIf="errormessage">
-            <div class="alert alert-danger">
-                {{errormessage}}
-            </div>
-        </ng-container>
-        <ng-container *ngIf="isAuth">
-            <div class="alert alert-success">
-                Login Successfully!
-            </div>
-        </ng-container>
-    </form>
-</div>
+</button> -->

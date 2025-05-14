@@ -1,1 +1,30 @@
-<p>services works!</p>
+<nav style="display: flex; gap: 80px; background-color: #5192d7; padding: 20px;">
+    <a href="" routerLink="/home" style="color: white; text-decoration: none; font-weight: bold;">Home</a>
+    <a href="" routerLink="/about" style="color: white; text-decoration: none; font-weight: bold;">About</a>
+    <a href="" routerLink="/services" style="color: white; text-decoration: none; font-weight: bold;">Services</a>
+    <a href="" routerLink="/contact" style="color: white; text-decoration: none; font-weight: bold;">Contact</a>
+</nav>
+<ng-container *ngIf="categories.length > 0 ; else noData" class="my-3">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="bg-info">Name</th>
+                <th class="bg-info">Item</th>
+                <th class="bg-info">Quantity</th>
+                <th class="bg-info">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories">
+                <td>{{category.name}}</td>
+                <td>{{category.items}}</td>
+                <td>{{category.quantity}}</td>
+                <td>{{category.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+
+<ng-template #noData>
+    <p>No products available.</p>
+</ng-template>

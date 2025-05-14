@@ -36,35 +36,5 @@ export class AppComponent {
     { name: 'Kiran', active: true },
   ];
 
-  username: string = '';
-  password: string = '';
-  isAuth: boolean = false;
-  errormessage: string = '';
-
-  isvaliduserame = 'admin';
-  isvalidpassword = 'admin123';
-
-  onLogin() {
-    if (
-      this.username === this.isvaliduserame &&
-      this.password === this.isvalidpassword
-    ) {
-      this.isAuth = true;
-      this.errormessage = '';
-    } else {
-      this.isAuth = false;
-      this.errormessage = 'Invalid username or password';
-    }
-  }
-
-  users: any[] = [];
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.http
-      .get<any[]>('https://jsonplaceholder.typicode.com/users')
-      .subscribe((data) => (this.users = data));
-    console.log(this.users);
-  }
+ 
 }
