@@ -1,18 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'basic-router-practice';
   toggle: boolean = true;
 
-    OnToggle() {
+  OnToggle() {
     this.toggle = !this.toggle;
   }
-  
+
   categories = [
     { name: 'Fruits', items: 'Banana', quantity: 10, price: 25 },
     { name: 'Fruits', items: 'Apple', quantity: 15, price: 30 },
@@ -26,8 +27,7 @@ export class AppComponent {
     { name: 'Grains', items: 'Rice', quantity: 100, price: 40 },
   ];
 
-
-  users = [
+  user = [
     { name: 'Alice', active: true },
     { name: 'Bob', active: false },
     { name: 'Charlie', active: true },
@@ -55,5 +55,16 @@ export class AppComponent {
       this.isAuth = false;
       this.errormessage = 'Invalid username or password';
     }
+  }
+
+  users: any[] = [];
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http
+      .get<any[]>('https://jsonplaceholder.typicode.com/users')
+      .subscribe((data) => (this.users = data));
+    console.log(this.users);
   }
 }
